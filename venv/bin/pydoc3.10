@@ -1,5 +1,0 @@
-#!/Users/vaibhavkavdia/Desktop/Projects_for_Resume/AI/supply_chain_rag_copilot/venv/bin/python3.10
-
-import pydoc
-if __name__ == '__main__':
-    pydoc.cli()
