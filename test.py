@@ -1,6 +1,7 @@
 from src.components.retrieval.retriever import Retriever
 from src.components.retrieval.context_builder import ContextBuilder
 from src.components.retrieval.prompt_builder import PromptTemplate
+from src.components.llm.generator import GroqLLM
 
 
 retriever = Retriever()
@@ -17,3 +18,10 @@ prompt = prompt_builder.build_prompt(query, context)
 
 print("\n===== FINAL PROMPT =====\n")
 print(prompt)
+
+llm = GroqLLM()
+
+answer = llm.generate(prompt)
+
+print("\n====== ANSWER ======\n")
+print(answer)

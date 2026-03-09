@@ -1,8 +1,6 @@
 class PromptTemplate:
 
-    """
-    Generates the prompt for the LLM
-    """
+    """Generates the prompt for the LLM"""
 
     def build_prompt(self, query, context):
 

@@ -3,9 +3,7 @@ from logger import logger
 
 class ContextBuilder:
 
-    """
-    Builds context from retrieved chunks
-    """
+    """Builds context from retrieved chunks """
 
     def build_context(self, retrieved_chunks):
 

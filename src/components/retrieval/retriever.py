@@ -7,9 +7,7 @@ from logger import logger
 
 
 class Retriever:
-    """
-    Retrieves relevant document chunks from FAISS vector database.
-    """
+    """Retrieves relevant document chunks from FAISS vector database."""
 
     def __init__(self):
 
