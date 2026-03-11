@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from groq import Groq
 from logger import logger
-
+import time
 load_dotenv()
 
 
@@ -20,17 +20,29 @@ class GroqLLM:
 
     def generate(self, prompt):
 
-        logger.info("Sending prompt to Groq")
+        try:
 
-        response = self.client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {"role": "user", "content": prompt}
-            ]
-        )
+            start = time.time()
 
-        answer = response.choices[0].message.content
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "user", "content": prompt}
+                ]
+            )
 
-        logger.info("Received response from Groq")
+            answer = response.choices[0].message.content
 
-        return answer
+            if not answer or answer.strip() == "":
+                raise ValueError("Empty LLM response")
+
+            return answer
+
+        except Exception as e:
+
+            print(f"LLM Error: {str(e)}")
+
+            return (
+                "The AI system encountered an issue while generating the response. "
+                "Please try again."
+            )
