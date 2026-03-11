@@ -3,7 +3,9 @@ import json
 from logger import logger
 import numpy as np
 import faiss
+from src.configs import FAISS_INDEX_PATH
 
+faiss.read_index(FAISS_INDEX_PATH)
 class VectorStore:
     #handles the faiss vector storage 
     def __init__(self):

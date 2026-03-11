@@ -4,6 +4,8 @@ import numpy as np
 
 from sentence_transformers import SentenceTransformer
 from logger import logger
+from src.configs import FAISS_INDEX_PATH
+
 
 
 class Retriever:
@@ -13,7 +15,7 @@ class Retriever:
 
         logger.info("Loading FAISS index")
 
-        self.index = faiss.read_index("data/db/faiss_index.bin")
+        self.index = faiss.read_index(FAISS_INDEX_PATH)
 
         logger.info("Loading chunk metadata")
 
