@@ -23,8 +23,18 @@ class Retriever:
             self.metadata = json.load(f)
 
         logger.info("Loading embedding model for queries")
+        self.model = None
 
-        self.model = SentenceTransformer("all-MiniLM-L6-v2")
+    def load_model(self):
+        if self.model is None:
+            from sentence_transformers import SentenceTransformer
+            self.model = SentenceTransformer("paraphrase-MiniLM-L3-v2")
+
+    def search(self, query):
+
+        self.load_model()
+
+        query_embedding = self.model.encode([query])
 
     def search(self, query, top_k=5, similarity_threshold=0.65):
 

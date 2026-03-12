@@ -13,7 +13,7 @@ from sentence_transformers import SentenceTransformer
 
 @st.cache_resource
 def load_embedding_model():
-    return SentenceTransformer("all-MiniLM-L6-v2")
+    return SentenceTransformer("paraphrase-MiniLM-L3-v2")
 
 model = load_embedding_model()
 # ----------------------------
@@ -130,8 +130,12 @@ st.divider()
 # ----------------------------
 # Initialize backend
 # ----------------------------
+@st.cache_resource
+def get_retriever():
+    return Retriever()
 
-retriever = Retriever()
+retriever = get_retriever()
+
 context_builder = ContextBuilder()
 prompt_builder = PromptTemplate()
 llm = GroqLLM()

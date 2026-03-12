@@ -8,7 +8,7 @@ class DocumentUploader:
 
     def __init__(self):
 
-        self.model = SentenceTransformer("all-MiniLM-L6-v2")
+        self.model = SentenceTransformer("paraphrase-MiniLM-L3-v2")
         self.index_path = FAISS_INDEX_PATH
         self.meta_path = METADATA_PATH
         self.index = faiss.read_index(self.index_path)
