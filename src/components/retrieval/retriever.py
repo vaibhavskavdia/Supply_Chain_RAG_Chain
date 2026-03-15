@@ -23,7 +23,7 @@ class Retriever:
             self.metadata = json.load(f)
 
         logger.info("Loading embedding model for queries")
-        self.model = None
+        self.model =SentenceTransformer("paraphrase-MiniLM-L3-v2")
 
     def load_model(self):
         if self.model is None:

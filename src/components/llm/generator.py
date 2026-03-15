@@ -28,7 +28,7 @@ class GroqLLM:
                 model=self.model,
                 messages=[
                     {"role": "user", "content": prompt}
-                ]
+                ],max_tokens=2000
             )
 
             answer = response.choices[0].message.content
