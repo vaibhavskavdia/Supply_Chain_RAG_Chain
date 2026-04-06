@@ -40,19 +40,33 @@ This project uses **Retrieval-Augmented Generation (RAG)** to:
 
 ## 🧠 System Overview
 User Query
+
 ↓
+
 Query Embedding
+
 ↓
+
 FAISS Vector Search
+
 ↓
+
 Relevant Document Chunks
+
 ↓
+
 Context Builder
+
 ↓
+
 LLM (Groq Llama-3)
+
 ↓
+
 Answer + Source Citations
+
 ↓
+
 PostgreSQL Logging
 
 
@@ -109,18 +123,30 @@ PostgreSQL Logging
 
 ## 🏗️ Project Structure
 src/
+
 │
-├── ingestion/
-├── chunking/
-├── embeddings/
-├── retrieval/
-├── reranker/
-├── context_builder/
-├── prompt_builder/
-├── llm/
-├── utils/
+
+├── 
+ingestion/
+├── 
+chunking/
+├── 
+embeddings/
+├── 
+retrieval/
+├── 
+reranker/
+├── 
+context_builder/
+├── 
+prompt_builder/
+├──
+ llm/
+├──
+ utils/
 │
-├── config.py
+├──
+ config.py
 
 
 ---
