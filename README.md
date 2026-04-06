@@ -128,24 +128,34 @@ src/
 
 ├── 
 ingestion/
+
 ├── 
 chunking/
+
 ├── 
 embeddings/
+
 ├── 
 retrieval/
+
 ├── 
 reranker/
+
 ├── 
 context_builder/
+
 ├── 
 prompt_builder/
+
 ├──
  llm/
+ 
 ├──
  utils/
+ 
 │
 ├──
+
  config.py
 
 
